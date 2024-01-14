@@ -5,6 +5,17 @@ plugins {
 
 group = "com.ndgndg91"
 
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            groupId = "com.github.ndgndg91"
+            artifactId = "hello-jitpack"
+            version = "0.0.1"
+        }
+    }
+}
+
 repositories {
     mavenCentral()
 }
